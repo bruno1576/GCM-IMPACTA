@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+
+<p><strong>1) Da lista de tecnologias abaixo, aponte qual é executada no cliente e qual é executada no servidor </strong></p>
+<table border="1">
+	<tr><th>Tecnologia</th><th>Cliente</th><th>Servidor</th></tr>
+	<tr><td>Apache</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>JavaScript</td><td>X</td><td>&nbsp;</td></tr>
+	<tr><td>Tomcat</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>Java</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>HTML</td><td>X</td><td>&nbsp;</td></tr>
+	<tr><td>PHP</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>Apache</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>MySQL</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>XHTML</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>MongoDB</td><td>&nbsp;</td><td>X</td></tr>
+	<tr><td>CSS</td><td>X</td><td>&nbsp;</td></tr>
+</table>
+
+<p><strong>2) Aponte as regiões da URL <code>http://www.impacta.com.br/eventos/default.php</code></strong></p>
+
+<p>RESPOSTA:http> informa o protocolo de comunicação utilizado,impacta: indifca o dominio da rede que hospeda o recurso desejada,eventos:caminho de diretorio ou pasta,default.php:recurso requisitado</p>
+
+<p><strong>3) Quais outros protocolos de comunicação para troca de mensagens via internet existem? Pesquise e cite 3 exemplos, descrevendo sua função e aplicação.</strong></p>
+<ul>
+	<li>
+		<p>
+			PROTOCOLO 1:SMTP:O protocolo SMTP:(Simple Mail Transfer Protocol - Protocolo Simples de Transferência de E-mail) é um protocolo que permite a transferencia de email de um servidor par ao outro.
+		</p>
+	</li>
+	<li>
+		<p>
+			PROTOCOLO 2:IMAP: É um protocolo que permite gerenciar varios acessos simuntâneos ou administrar varias caixas de E-Mail e organizar as mensagens de acordo com mais criterios.
+		</p>
+	</li>
+	<li>
+		<p>
+			PROTOCOLO 3:POP3: POP3 (Post Office Protocol - Protocolo dos correios) permite, como seu nome indica, recuperar o seu e-mail nun servidor distante.
+		</p>
+	</li>
+</ul>
+
+<p><strong>4) Explore os sites de hospedagem do  (<a href="http://www.uolhost.uol.com.br/" target="_blank">http://www.uolhost.uol.com.br/</a>) e da LOCAWEB (<a href="https://www.locaweb.com.br" target="_blank">https://www.locaweb.com.br</a>), veja os serviços que eles oferecem. Qual desses serviços (em cada site) seria mais adequado para o seu site de desenvolvedor (páginas estáticas) e para a sua aplicação web?</strong></p>
+
+<p>RESPOSTA:LocaWeb:O hospedagem de sites permite um dominio gratís e sites ilimitados, tambem seria interessante o registro do dominio futuramente, e o certificado SSL LOCAWEB
+
+/Uol Host:O uol permite dominios adicionais e subdominios adicionais com apontamentos ilimitados, certificado SSL gratís elem de integração com o GIThub
+
+</p>
+
+<p><strong>5) Pequisem sobre as limitações do HTTP 1.1 e como o HTTP2 vence essa limitação, cite 2 dessas limitações e suas respostas no HTTP2</strong></p>
+
+<p>RESPOSTA:
+Requisições mais baratas:
+
+O HTTP 2.0 e o SPDY deixam as requisições em si mais baratas. Por exemplo, antes precisávamos habilitar o GZIP explicitamente no servidor para comprimir as respostas trafegadas. Agora, GZIP é padrão no protocolo, uma coisa a menos pra se preocupar.
+
+Mais que isso: um alto custo de se fazer vários requests no HTTP 1.1 era o tráfego dos cabeçalhos (headers). Eles não era comprimidos mas enviados em texto puro. E, pra piorar, cabeçalhos tinham que ser mandados novamente a toda requisição.
+
+No HTTP 2.0, os cabeçalhos são binários e compactados. Além disso, com os header tables, o navegador e o servidor podem mandar um certo header uma vez só e reaproveitar para as requisições seguintes. Só é preciso mandar os cabeçalhos que mudam. Isso deixa as requisições ainda mais baratas e justificam ainda mais a prática de usar vários requests ao invés de concatenar as coisas como fazíamos antigamente.
+
+Aliás, uma prática que era recomendada no HTTP 1.1 de usar domínios sem cookies para servir imagens, CSS e JS, passa a ser irrelevante. Como os cookies são enviados em um header, sabemos que agora serão enviados uma vez só na conexão.
+       
+Não faça gambiarras para paralelizar requisições
+
+A limitação nas requisições no HTTP 1.1 é tão grande que nasceram diversas técnicas para passar por cima disso. A mais comum era a utilização de múltiplos hostnames para aumentar o limite de conexões paralelas. O browser abria então 6 conexões com o hostname principal mas a página usava mais outros endereços para ganhar mais 6 conexões, como imagens.meusite.com. Isso é trabalhoso de fazer.
+
+No HTTP 2.0 e no SPDY, usar vários hostnames é uma má-prática, principalmente por anular os benefícios do multiplexing. Agora, a conexão única do protocolo consegue paralelizar todos os requests e responses e não é mais necessário várias conexões.
+
+
+</p>
